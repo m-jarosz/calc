@@ -29,7 +29,10 @@
         return currentNumber.textContent = result;
     }
 
+    //@TODO Wstawić obsługę liczb ujemnych
+
     const isEqual = () => {
+        //@TODO Problem liczb zmiennoprzecinkowych w JS
         let operator = mathOperator.textContent;
         let a = Number(previousNumber.textContent);
         let b = Number(currentNumber.textContent);
@@ -67,6 +70,8 @@
         mathOperator.textContent = "";
         result = "";
     }
+
+    //@TODO Oprogramować historię wyników
 
     numbers.forEach((number) => number.addEventListener("click", clickNumber));
     operators.forEach((operator) => operator.addEventListener("click", clickOperator));
