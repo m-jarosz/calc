@@ -32,20 +32,19 @@
     //@TODO Wstawić obsługę liczb ujemnych
 
     const isEqual = () => {
-        //@TODO Problem liczb zmiennoprzecinkowych w JS
         let operator = mathOperator.textContent;
         let a = Number(previousNumber.textContent);
         let b = Number(currentNumber.textContent);
         if (typeof a !== "undefined" && typeof b !== "undefined") {
             switch (operator) {
                 case "+":
-                    result = a + b;
+                    result = ((a * 10) + (b * 10)) / 10;
                     break;
                 case "-":
-                    result = a - b;
+                    result = ((a * 10) - (b * 10)) / 10;
                     break;
                 case "x":
-                    result = a * b;
+                    result = (Number.isInteger(a) || Number.isInteger(b)) ? a * b : ((a * 10) * (b * 10)) / 10;
                     break;
                 case "/":
                     result = b === 0 ? "n/0 err" : a / b;
