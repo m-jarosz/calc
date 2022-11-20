@@ -6,8 +6,17 @@
     const operators = document.querySelectorAll(".js-operator");
     const equalBtn = document.querySelector(".js-equal");
     const clearBtn = document.querySelector(".js-clear");
+    const switchNegative = document.querySelector('.js-negative');
 
+    let isPositive = false;
     let result = "";
+
+    const setNegativeValue = () => {
+        if (!isPositive) {
+            currentNumber.textContent = "-";
+            isPositive;
+        }
+    }
 
     const clickNumber = (e) => {
         if (e.target.textContent === "." && currentNumber.textContent.includes(".")) return;
@@ -28,8 +37,6 @@
         currentNumber.style.color = "blue";
         return currentNumber.textContent = result;
     }
-
-    //@TODO Wstawić obsługę liczb ujemnych
 
     const isEqual = () => {
         let operator = mathOperator.textContent;
@@ -76,4 +83,5 @@
     operators.forEach((operator) => operator.addEventListener("click", clickOperator));
     equalBtn.addEventListener("click", isEqual);
     clearBtn.addEventListener("click", clearDisplay);
+    switchNegative.addEventListener('click', setNegativeValue);
 })();
