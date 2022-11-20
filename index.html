@@ -6,50 +6,55 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
-        integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+          integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
     <link rel="stylesheet" href="style/style.css">
     <script src="js/main.js" defer></script>
     <title>Simple Calculator</title>
 </head>
 
 <body>
+    <main class="main content-box">
+        <div class="screen">
+            <span class="display js-previousNumber"></span>
+            <span class="display js-mathSign"></span>
+            <span class="display js-currentNumber"></span>
+        </div>
+        <div class="keypad">
+            <button class="key js-operator">%</button>
+            <button class="key js-sign">7</button>
+            <button class="key js-sign">4</button>
+            <button class="key js-sign">1</button>
+            <button class="key js-sign">0</button>
+            <button class="key js-operator">&#8730</button>
+            <button class="key js-sign">8</button>
+            <button class="key js-sign">5</button>
+            <button class="key js-sign">2</button>
+            <button class="key js-sign">.</button>
+            <button class="key js-operator">x</button>
+            <button class="key js-sign">9</button>
+            <button class="key js-sign">6</button>
+            <button class="key js-sign">3</button>
+            <button class="key js-equal">=</button>
+            <button class="key js-operator">/</button>
+            <button class="key js-operator">nn</button>
+            <button class="key js-operator">-</button>
+            <button class="key js-operator">+</button>
+            <button class="key js-clear">c</button>
+        </div>
+        <div class="negativ-history">
+            <button class="key js-negative">-/+</button>
+            <button class="key js-history">History</button>
+        </div>
+    </main>
+
+    <aside class="history content-box">
+        <h2 class="history-title">Operation history</h2>
+        <ul class="operation-list js-operation-list"></ul>
+        <div class="history-btn-panel">
+            <button class="key key-history js-exitHistKey">Exit</button>
+            <button class="key key-history js-clearHistKey">Clear</button>
+        </div>
+    </aside>
 </body>
-<main class="main">
-    <div class="screen">
-        <span class="display js-previousNumber"></span>
-        <span class="display js-mathSign"></span>
-        <span class="display js-currentNumber"></span>
-    </div>
-    <div class="keypad">
-        <button class="key js-operator">%</button>
-        <button class="key js-sign">7</button>
-        <button class="key js-sign">4</button>
-        <button class="key js-sign">1</button>
-        <button class="key js-sign">0</button>
-        <button class="key js-operator">&#8730</button>
-        <button class="key js-sign">8</button>
-        <button class="key js-sign">5</button>
-        <button class="key js-sign">2</button>
-        <button class="key js-sign">.</button>
-        <button class="key js-operator">x</button>
-        <button class="key js-sign">9</button>
-        <button class="key js-sign">6</button>
-        <button class="key js-sign">3</button>
-        <button class="key js-equal">=</button>
-        <button class="key js-operator">/</button>
-        <button class="key js-operator">nn</button>
-        <button class="key js-operator">-</button>
-        <button class="key js-operator">+</button>
-        <button class="key js-clear">c</button>
-        <!--@TODO Zrobić sekcję z historią operacji -->
-        
-    </div>
-    <div class="negativ-history">
-        <button class="key js-negative">-/+</button>
-        <button class="key js-history">History</button>
-    </div>
-
-</main>
-
 </html>
