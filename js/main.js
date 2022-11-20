@@ -8,19 +8,16 @@
     const clearBtn = document.querySelector(".js-clear");
     const switchNegative = document.querySelector('.js-negative');
 
-    let isPositive = false;
     let result = "";
 
     const setNegativeValue = () => {
-        if (!isPositive) {
             currentNumber.textContent = "-";
-            isPositive;
-        }
     }
 
     const clickNumber = (e) => {
         if (e.target.textContent === "." && currentNumber.textContent.includes(".")) return;
         if (e.target.textContent === "." && currentNumber.textContent === "") return currentNumber.textContent = ".0";
+        if (e.target.textContent === "0" && currentNumber.textContent === "-") return currentNumber.textContent = "0";
         return currentNumber.textContent += e.target.textContent;
     }
 
