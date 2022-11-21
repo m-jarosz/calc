@@ -98,6 +98,10 @@ span {
   height: 95%;
 }
 
+.active {
+  display: block;
+}
+
 @media (max-width: 800px) {
   .content-box {
     width: 90%;
