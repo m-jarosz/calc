@@ -10,8 +10,11 @@
   const historyBtn = document.querySelector(".js-history");
   const historySection = document.querySelector(".history");
   const closeHistoryBtn = document.querySelector(".js-exitHistKey");
+  const clearHistoryBtn = document.querySelector(".js-clearHistKey");
+  const listToShow = document.querySelector(".js-operation-list");
 
   let result = "";
+  const operationHistory = JSON.parse(localStorage.getItem("history")) || [];
 
   const setNegativeValue = () => {
     currentNumber.textContent = "-";
@@ -74,6 +77,7 @@
       }
       showResult();
     }
+    saveHistory(a, operator, b, result);
   };
 
   const clearDisplay = () => {
@@ -84,11 +88,36 @@
   };
 
   //@TODO Oprogramować historię wyników
+  const saveHistory = (a, operation, b, result) => {
+    operationHistory.push(
+      `${a} ${operation} ${b < 0 ? `(${b})` : b} = ${result}`
+    );
+    localStorage.setItem("history", JSON.stringify(operationHistory));
+  };
 
-  const showHistory = () => historySection.classList.toggle("active");
+  const prepareHistory = () => {
+    const reverseArrayHistory = [...operationHistory];
+    return reverseArrayHistory.reverse();
+  };
+
+  const showHistory = () => {
+    historySection.classList.toggle("active");
+    const historyToShow = prepareHistory();
+    historyToShow.forEach((item) => {
+      const itemList = document.createElement("li");
+      itemList.textContent = item;
+      listToShow.appendChild(itemList);
+    });
+  };
+
+  const clearHistory = () => {
+    localStorage.removeItem("history");
+    listToShow.textContent = "";
+  };
 
   const closeHistory = () => {
     historySection.classList.toggle("active");
+    listToShow.textContent = "";
     clearDisplay();
   };
 
@@ -101,4 +130,5 @@
   switchNegative.addEventListener("click", setNegativeValue);
   historyBtn.addEventListener("click", showHistory);
   closeHistoryBtn.addEventListener("click", closeHistory);
+  clearHistoryBtn.addEventListener("click", clearHistory);
 })();
