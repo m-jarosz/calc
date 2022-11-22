@@ -114,6 +114,7 @@
 
   const clearHistory = () => {
     localStorage.removeItem("history");
+    operationHistory.length = 0;
     listToShow.textContent = "";
   };
 
