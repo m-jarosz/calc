@@ -96,8 +96,10 @@
   };
 
   const prepareHistory = () => {
-    const reverseArrayHistory = [...operationHistory];
-    return reverseArrayHistory.reverse();
+    if (localStorage.getItem("history")) {
+      const reverseArrayHistory = [...operationHistory];
+      return reverseArrayHistory.reverse();
+    }
   };
 
   const showHistory = () => {
