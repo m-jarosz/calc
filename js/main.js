@@ -31,6 +31,10 @@
   };
 
   const clickOperator = (e) => {
+    if (currentNumber.textContent === "-") {
+      currentNumber.textContent = "Incorrect parameter";
+      return;
+    }
     if (currentNumber.textContent) {
       previousNumber.textContent = currentNumber.textContent;
       currentNumber.textContent = "";
@@ -39,9 +43,13 @@
   };
 
   const showResult = () => {
-    currentNumber.style.fontWeight = "700";
-    currentNumber.style.color = "blue";
-    currentNumber.textContent = result;
+    if (!Number.isNaN(result)) {
+      currentNumber.style.fontWeight = "700";
+      currentNumber.style.color = "blue";
+      currentNumber.textContent = result;
+    } else {
+      currentNumber.textContent = "Incorrect parameter";
+    }
   };
 
   const isEqual = () => {
@@ -87,12 +95,13 @@
     result = "";
   };
 
-  //@TODO Oprogramować historię wyników
   const saveHistory = (a, operation, b, result) => {
-    operationHistory.push(
-      `${a} ${operation} ${b < 0 ? `(${b})` : b} = ${result}`
-    );
-    localStorage.setItem("history", JSON.stringify(operationHistory));
+    if (!Number.isNaN(a) && !Number.isNaN(b) && !Number.isNaN(result)) {
+      operationHistory.push(
+        `${a} ${operation} ${b < 0 ? `(${b})` : b} = ${result}`
+      );
+      localStorage.setItem("history", JSON.stringify(operationHistory));
+    }
   };
 
   const prepareHistory = () => {
