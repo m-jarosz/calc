@@ -27,11 +27,3 @@ Welcome to "Simple Calculator" project. It's a simple solution which shows gener
 2. Click *nn* button
 3. Chose power number
 4. Click equal sign and get result
-
-![Desktop view](https://imgbox.com/ErQeTZr6)
-
-![Mobile view](https://ibb.co/xSP337p)
-
-![Operation history Tab](https://ibb.co/fCv7pw4)
-
-
