@@ -27,3 +27,9 @@ Welcome to "Simple Calculator" project. It's a simple solution which shows gener
 2. Click *nn* button
 3. Chose power number
 4. Click equal sign and get result
+
+![Desktop front view](./img/desktop.jpeg)
+
+![Desktop history view](./img/desktop-hist.jpeg)
+
+![Mobile view](./img/mobile.jpeg)
