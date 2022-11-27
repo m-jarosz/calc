@@ -45,7 +45,6 @@
   const showResult = () => {
     if (!Number.isNaN(result)) {
       currentNumber.style.fontWeight = "700";
-      currentNumber.style.color = "blue";
       currentNumber.textContent = result;
     } else {
       currentNumber.textContent = "Incorrect parameter";
