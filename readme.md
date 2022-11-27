@@ -28,7 +28,7 @@ Welcome to "Simple Calculator" project. It's a simple solution which shows gener
 3. Chose power number
 4. Click equal sign and get result
 
-![Desktop view](https://ibb.co/98TSVz7)
+![Desktop view](https://files.fm/u/yhkj29ert)
 
 ![Mobile view](https://ibb.co/xSP337p)
 
